@@ -8,10 +8,15 @@ There are no other obstructions on the table surface
 The turtle is free to roam around the surface of the table, but must be prevented from falling to destruction. Any movement that would result in the turtle falling from the table must be prevented, however further valid movement commands must still be allowed.
 
 Create a console application that can read in commands of the following form:
+
 PLACE X,Y,F
+
 MOVE
+
 LEFT
+
 RIGHT
+
 REPORT
 
 PLACE will put the turtle on the table in position X,Y and facing NORTH, SOUTH, EAST or WEST.
@@ -40,28 +45,45 @@ Any move that would cause the turtle to fall must be ignored.
 Example Input and Output:
 
 --- Input ---
+
 PLACE 0,0,NORTH
+
 MOVE
+
 REPORT
 
+
 --- Output ---
+
 0,1,NORTH
 
 --- Input ---
+
 PLACE 0,0,NORTH
+
 LEFT
+
 REPORT
 
+
 --- Output ---
+
 0,0,WEST
 
 --- Input ---
+
 PLACE 1,2,EAST
+
 MOVE
+
 MOVE
+
 LEFT
+
 MOVE
+
 REPORT
 
 --- Output ---
+
 3,3,NORTH
