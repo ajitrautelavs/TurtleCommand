@@ -94,8 +94,7 @@ namespace TurtleCommand
                 string[] placeCommands = placeArgumemts.Split(',');
                 if (placeCommands.Length == 3)
                 {
-                    //If PLACE command has 4 arguments, then it is valid command with position, otherwise just place on default position
-                    //placeCommands[0] is the PLACE command name
+                    //If PLACE command follows 3 arguments, then it is valid command with position, otherwise just place on default position
                     position.X = int.Parse(placeCommands[0].Trim());
                     position.Y = int.Parse(placeCommands[1].Trim());
                     position.F = (DirectionEnum)Enum.Parse(typeof(DirectionEnum), placeCommands[2].Trim(), true);      //Parse direction

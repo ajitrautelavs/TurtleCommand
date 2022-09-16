@@ -128,5 +128,26 @@ namespace TurtleCommandUnitTest
             //Assert
             Assert.AreEqual(expectedReport, actualReport, "Turtle's correct position reported");
         }
+
+        [TestMethod]
+        public void Not_Placed_Yet_Ignore_All_Commands_Test()
+        {
+            ExecuteTurtle exe = new ExecuteTurtle();
+
+            //Arrange
+            List<string> commandsList = new List<string>();
+            commandsList.Add("MOVE");
+            commandsList.Add("LEFT");
+            commandsList.Add("MOVE");
+            commandsList.Add("RIGHT");
+            commandsList.Add("REPORT");
+            string expectedReport = "";
+
+            //Act
+            string actualReport = exe.ExecuteCommands(commandsList);
+
+            //Assert
+            Assert.AreEqual(expectedReport, actualReport, "Turtle's correct position reported");
+        }
     }
 }
