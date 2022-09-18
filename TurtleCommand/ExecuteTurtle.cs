@@ -95,8 +95,13 @@ namespace TurtleCommand
                 if (placeCommands.Length == 3)
                 {
                     //If PLACE command follows 3 arguments, then it is valid command with position, otherwise just place on default position
-                    position.X = int.Parse(placeCommands[0].Trim());
-                    position.Y = int.Parse(placeCommands[1].Trim());
+                    int x = int.Parse(placeCommands[0].Trim());
+                    int y = int.Parse(placeCommands[1].Trim());
+                    //Make sure coordinates are within the board
+                    if (x >= BoardPosition.LowerBoundX && x <= BoardPosition.UpperBoundX)
+                        position.X = x;
+                    if (y >= BoardPosition.LowerBoundY && y <= BoardPosition.UpperBoundY)
+                        position.Y = int.Parse(placeCommands[1].Trim());
                     position.F = (DirectionEnum)Enum.Parse(typeof(DirectionEnum), placeCommands[2].Trim(), true);      //Parse direction
                 }
             }

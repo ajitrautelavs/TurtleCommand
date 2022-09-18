@@ -149,5 +149,23 @@ namespace TurtleCommandUnitTest
             //Assert
             Assert.AreEqual(expectedReport, actualReport, "Turtle's correct position reported");
         }
+
+        [TestMethod]
+        public void Invalid_Place_Coordinates_Test()
+        {
+            ExecuteTurtle exe = new ExecuteTurtle();
+
+            //Arrange
+            List<string> commandsList = new List<string>();
+            commandsList.Add("PLACE 8,9,EAST");
+            commandsList.Add("REPORT");
+            string expectedReport = "0,0,EAST";
+
+            //Act
+            string actualReport = exe.ExecuteCommands(commandsList);
+
+            //Assert
+            Assert.AreEqual(expectedReport, actualReport, "Turtle's correct position reported");
+        }
     }
 }
