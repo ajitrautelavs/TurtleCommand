@@ -101,7 +101,7 @@ namespace TurtleCommand
                     if (x >= BoardPosition.LowerBoundX && x <= BoardPosition.UpperBoundX)
                         position.X = x;
                     if (y >= BoardPosition.LowerBoundY && y <= BoardPosition.UpperBoundY)
-                        position.Y = int.Parse(placeCommands[1].Trim());
+                        position.Y = y;
                     position.F = (DirectionEnum)Enum.Parse(typeof(DirectionEnum), placeCommands[2].Trim(), true);      //Parse direction
                 }
             }
